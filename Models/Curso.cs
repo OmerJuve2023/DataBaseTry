@@ -10,5 +10,10 @@ public class Curso {
 
     [Required]
     public string CodigoInstitucion { get; set; }  // p.ej. “86878”, para la multitenancy
+
+    [Required]
+    public int InstitucionId { get; set; } // FK a Institucion
+    public Institucion Institucion { get; set; }
+
     public ICollection<Seccion> Secciones { get; set; }
 }

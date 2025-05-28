@@ -12,6 +12,10 @@ namespace DataBaseTry.Models
         public DbSet<Seccion> Secciones { get; set; }
         public DbSet<Inscripcion> Inscripciones { get; set; }
         public DbSet<Material> Materiales { get; set; }
+        public DbSet<Institucion> Instituciones { get; set; }
+        public DbSet<Notificacion> Notificaciones { get; set; }
+        public DbSet<ComentarioMaterial> ComentariosMaterial { get; set; }
+        public DbSet<HistorialAccesoMaterial> HistorialesAccesoMaterial { get; set; }
 
 
     }
