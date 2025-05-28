@@ -1,0 +1,51 @@
+﻿@model DataBaseTry.Models.Alumno
+
+<h2>Editar Alumno</h2>
+
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Dni" />
+
+    <div>
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" placeholder="@Model.Nombre" />
+        <span asp-validation-for="Nombre"></span>
+    </div>
+
+    <div>
+        <label asp-for="Apellido"></label>
+        <input asp-for="Apellido" placeholder="@Model.Apellido" />
+        <span asp-validation-for="Apellido"></span>
+    </div>
+
+    <div>
+        <label asp-for="FechaNacimiento"></label>
+        <input asp-for="FechaNacimiento" type="date" value="@Model.FechaNacimiento.ToString("yyyy-MM-dd")" />
+        <span asp-validation-for="FechaNacimiento"></span>
+    </div>
+
+    <div>
+        <label asp-for="Correo"></label>
+        <input asp-for="Correo" type="email" placeholder="@Model.Correo" />
+        <span asp-validation-for="Correo"></span>
+    </div>
+
+    <div>
+        <label asp-for="Direccion"></label>
+        <input asp-for="Direccion" placeholder="@Model.Direccion" />
+        <span asp-validation-for="Direccion"></span>
+    </div>
+
+    <div>
+        <label asp-for="NumeroContacto"></label>
+        <input asp-for="NumeroContacto" type = "text" placeholder="@Model.NumeroContacto" />
+        <span asp-validation-for="NumeroContacto"></span>
+    </div>
+
+    <button type="submit">Guardar Cambios</button>
+</form>
+
+<a asp-action="Index">Cancelar</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

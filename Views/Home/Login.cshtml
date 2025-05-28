@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<h2>Iniciar Sesión</h2>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label for="Correo">Correo:</label>
+        <input type="email" name="Correo" required />
+    </div>
+
+    <div>
+        <label for="Contraseña">Contraseña:</label>
+        <input type="password" name="Contraseña" id="password" required />
+        <button type="button" onclick="togglePassword()">👁</button>
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+        <p style="color:red;">@ViewBag.Error</p>
+    }
+
+    <button type="submit">Ingresar</button>
+</form>
+
+<style>
+    form {
+        max-width: 300px;
+        margin: auto;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input, button {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+</style>
+
+<script>
+    function togglePassword() {
+        var pwd = document.getElementById("password");
+        pwd.type = (pwd.type === "password") ? "text" : "password";
+    }
+</script>

@@ -1,0 +1,37 @@
+@model IEnumerable<DataBaseTry.Models.Material>
+@{
+    ViewData["Title"] = "Materiales";
+    int rol = Context.Session.GetInt32("Rol") ?? -1;
+    int seccionId = ViewBag.SeccionId;
+}
+
+<h2>Materiales de la Sección</h2>
+@if (rol == 1 || rol == 2)
+{
+    <a asp-action="Create" asp-route-seccionId="@seccionId" class="btn btn-primary mb-2">Subir Material</a>
+}
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Archivo</th>
+            <th>Fecha de subida</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mat in Model)
+        {
+            <tr>
+                <td>@mat.Titulo</td>
+                <td>@mat.Descripcion</td>
+                <td>
+                    <a href="@mat.FilePath" target="_blank">Descargar</a>
+                </td>
+                <td>@mat.FechaSubida.ToLocalTime().ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Home" asp-action="Index">Volver</a>
+<a asp-controller="Seccion" asp-action="Index">Volver a Secciones</a>

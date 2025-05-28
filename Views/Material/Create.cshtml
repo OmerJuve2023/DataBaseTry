@@ -1,0 +1,23 @@
+@model int
+@{
+    ViewData["Title"] = "Subir Material";
+    int seccionId = Model;
+}
+
+<h2>Subir Material</h2>
+<form asp-action="Create" asp-route-seccionId="@seccionId" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Título</label>
+        <input name="titulo" required />
+    </div>
+    <div>
+        <label>Descripción</label>
+        <textarea name="descripcion" required></textarea>
+    </div>
+    <div>
+        <label>Archivo</label>
+        <input type="file" name="archivo" required />
+    </div>
+    <button type="submit">Subir</button>
+</form>
+<a asp-action="Index" asp-route-seccionId="@seccionId">Volver</a>

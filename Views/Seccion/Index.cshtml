@@ -1,0 +1,27 @@
+@model IEnumerable<DataBaseTry.Models.Seccion>
+@{
+    ViewData["Title"] = "Mis Secciones";
+}
+
+<h2>Mis Secciones</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Curso</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var seccion in Model)
+        {
+            <tr>
+                <td>@seccion.Nombre</td>
+                <td>@seccion.Curso.Nombre</td>
+                <td>
+                    <a asp-controller="Material" asp-action="Index" asp-route-seccionId="@seccion.Id" class="btn btn-info">Ver Materiales</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

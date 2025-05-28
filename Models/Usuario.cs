@@ -1,0 +1,38 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+
+namespace DataBaseTry.Models
+{
+    [Index(nameof(Correo), IsUnique = true)]
+    public class Usuario
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        
+        [EmailAddress]
+        public string Correo { get; set; } = string.Empty;
+
+        [Required]
+        public string Contraseña { get; set; } = string.Empty;
+
+        [Required]
+        public int Institucion { get; set; } //codigo de 5 digitos siempre 86878
+
+        [Required]
+        [Range(0, 2)]
+        public int Rol { get; set; } // 0 = Alumno, 1 = Profesor, 2 = Admin
+
+        [Required]
+        public string Nombre { get; set; } = string.Empty;
+
+        [Required]
+        public string Apellido { get; set; } = string.Empty;
+
+        public bool Activo { get; set; } = true;
+
+        public DateTime FechaRegistro { get; set; } = DateTime.Now;
+    }
+}

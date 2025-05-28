@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Base de Datos";
+}
+
+@model IEnumerable<DataBaseTry.Models.Alumno>
+
+@using Microsoft.AspNetCore.Http
+@{
+    int rol = Context.Session.GetInt32("Rol") ?? -1;
+    string rolTexto = rol switch
+    {
+        0 => "Alumno",
+        1 => "Profesor",
+        2 => "Administrador",
+        _ => "Desconocido"
+    };
+}
+
+@if (rol == 0) // Alumno
+{
+    <div style="text-align:center; margin-top: 20px;">
+        <h3>Bienvenido al portal Alumno</h3>
+    </div>
+}
+else if (rol == 1 || rol == 2) // Profesor o Admin
+{
+    <h2 style="text-align:center;">Lista de Alumnos</h2>
+
+    @if (rol == 2) // Solo Admin puede ver el botón de añadir
+    {
+        <div style="text-align:center; margin-bottom: 10px;">
+            <a asp-action="Crear" class="add-icon" title="Añadir nuevo alumno">
+                <i class="fas fa-plus-circle"></i>
+            </a>
+        </div>
+    }
+
+    <input type="text" id="buscador" placeholder="Buscar alumno..." style="margin-bottom:10px; padding:5px; width: 100%;" />
+
+    <table>
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha Nacimiento</th>
+                <th>Correo</th>
+                <th>Dirección</th>
+                <th>Contacto</th>
+                @if (rol == 2) // Solo admin ve acciones
+                {
+                    <th>Acciones</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model)
+            {
+                <tr>
+                    <td>@alumno.Dni</td>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.Apellido</td>
+                    <td>@alumno.FechaNacimiento.ToShortDateString()</td>
+                    <td>@alumno.Correo</td>
+                    <td>@alumno.Direccion</td>
+                    <td>@alumno.NumeroContacto</td>
+                    @if (rol == 2)
+                    {
+                        <td>
+                            <a asp-action="Editar" asp-route-id="@alumno.Dni">
+                                <button class="tablebutton">Editar</button>
+                            </a>
+
+                            <form asp-action="Eliminar" method="post" style="display:inline;">
+                                <input type="hidden" name="dni" value="@alumno.Dni" />
+                                <button type="submit" class="tablebutton" onclick="return confirm('¿Eliminar alumno?');">Eliminar</button>
+                            </form>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('buscador').addEventListener('input', function () {
+            const filtro = this.value.toLowerCase();
+            const filas = document.querySelectorAll('table tbody tr');
+
+            filas.forEach(fila => {
+                const textoFila = fila.innerText.toLowerCase();
+                fila.style.display = textoFila.includes(filtro) ? '' : 'none';
+            });
+        });
+    </script>
+}
+else
+{
+    <div class="alert alert-danger">No tienes permisos para acceder a esta vista.</div>
+}

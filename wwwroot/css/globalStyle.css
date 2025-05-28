@@ -1,0 +1,254 @@
+.navbar {
+    padding: 1rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-brand img.logo {
+    width: 40px;
+    height: 40px;
+    transform: scale(3.5);
+    transform-origin: center;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    color: #2d2d2d; 
+    text-decoration: none; 
+    padding: 0.5rem 1rem; 
+    border-radius: 4px; 
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .nav-link:visited {
+    color: #2d2d2d;
+  }
+  
+  .nav-link:hover {
+    color: #ffffff; 
+    background-color: #4caf50; 
+    text-decoration: none; 
+  }
+  
+  .nav-link:focus {
+    outline: 2px solid #4caf50;
+    outline-offset: 2px;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+
+
+/* Estilo Global */
+.edulink-text {
+    font-family: 'Charter';
+    font-size: 2rem;
+    color: #000000;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+/* Encabezados */
+h1, h3, h4 {
+    font-weight: 500;
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-weight: 500;
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+/* Formularios */
+form {
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 500;
+    color: #5a5a5a;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    color: #3d3d3d;
+}
+
+input::placeholder {
+    color: #9b9b9b;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.add-icon {
+    font-size: 2rem; 
+    color: #4caf50; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.add-icon:hover {
+    color: #388e3c; 
+}
+
+/* Links */
+
+a {
+    color: #4caf50;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+/* Input de búsqueda */
+#buscador {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: #f8f8f8;
+    color: #4a4a4a;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #eafaf1;
+}
+
+/* Botones de acción en la tabla */
+.tablebutton {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.tablebutton:hover {
+    background-color: #45a049;
+}
+
+form button {
+    background-color: #e74c3c;
+}
+
+form button:hover {
+    background-color: #c0392b;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    #buscador {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: url('~/fonts/Charter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
