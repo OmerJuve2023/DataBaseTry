@@ -8,13 +8,31 @@ namespace DataBaseTry.Models
     {
         public static void Seed(AppDbContext context)
         {
+            // Crear Institución de ejemplo si no existe
+            if (!context.Instituciones.Any())
+            {
+                context.Instituciones.Add(new Institucion
+                {
+                    Id = 1,
+                    Nombre = "Universidad de Prueba",
+                    Direccion = "Calle Falsa 123",
+                    Telefono = "555-0000",
+                    Email = "info@uni.edu",
+                    CodigoInstitucion = "86878"
+                });
+                context.SaveChanges();
+            }
+
+            // Obtener el Id de la institución creada
+            var institucionId = context.Instituciones.First().Id;
+
             if (!context.Usuarios.Any())
             {
                 var usuario1 = new Usuario
                 {
                     Correo = "profesor1@uni.edu",
                     Contraseña = "hashedpass1",
-                    Institucion = 86878,
+                    InstitucionId = institucionId,
                     Rol = 1,
                     Nombre = "Ana",
                     Apellido = "García",
@@ -25,7 +43,7 @@ namespace DataBaseTry.Models
                 {
                     Correo = "admin@uni.edu",
                     Contraseña = "hashedpass2",
-                    Institucion = 86878,
+                    InstitucionId = institucionId,
                     Rol = 2,
                     Nombre = "Luis",
                     Apellido = "Pérez",
@@ -36,7 +54,7 @@ namespace DataBaseTry.Models
                 {
                     Correo = "alumno1@uni.edu",
                     Contraseña = "hashedpass3",
-                    Institucion = 86878,
+                    InstitucionId = institucionId,
                     Rol = 0,
                     Nombre = "Carlos",
                     Apellido = "López",
