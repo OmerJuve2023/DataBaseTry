@@ -97,8 +97,8 @@ namespace DataBaseTry.Models
             if (!context.Cursos.Any())
             {
                 context.Cursos.AddRange(
-                    new Curso { Id = 1, Nombre = "Matemática I", CodigoInstitucion = "86878" },
-                    new Curso { Id = 2, Nombre = "Programación", CodigoInstitucion = "86878" }
+                    new Curso { Id = 1, Nombre = "Matemática I", CodigoInstitucion = "86878", InstitucionId = institucionId },
+                    new Curso { Id = 2, Nombre = "Programación", CodigoInstitucion = "86878", InstitucionId = institucionId }
                 );
                 context.SaveChanges();
             }
