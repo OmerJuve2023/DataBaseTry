@@ -17,63 +17,63 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataBaseTry
 build_property.RootNamespace = DataBaseTry
-build_property.ProjectDir = /workspaces/DataBaseTry/
+build_property.ProjectDir = C:\Users\omerS\IdeaProjects\DataBaseTry\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /workspaces/DataBaseTry
+build_property.MSBuildProjectDirectory = C:\Users\omerS\IdeaProjects\DataBaseTry
 build_property._RazorSourceGeneratorDebug = 
 
-[/workspaces/DataBaseTry/Views/Home/Crear.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DcmVhci5jc2h0bWw=
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Home/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Home/Editar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FZGl0YXIuY3NodG1s
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Home/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Home/Integrantes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbnRlZ3JhbnRlcy5jc2h0bWw=
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Home/Integrantes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnRlZ3JhbnRlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Home/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Mb2dpbi5jc2h0bWw=
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Material/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWF0ZXJpYWwvQ3JlYXRlLmNzaHRtbA==
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Material/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Material/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWF0ZXJpYWwvSW5kZXguY3NodG1s
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Material/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Seccion/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VjY2lvbi9JbmRleC5jc2h0bWw=
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Seccion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjY2lvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/DataBaseTry/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-9jxrvnfkej
+[C:/Users/omerS/IdeaProjects/DataBaseTry/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-oirasyz4vp

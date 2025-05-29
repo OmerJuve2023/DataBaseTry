@@ -27,11 +27,16 @@ namespace DataBaseTry.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("InstitucionId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("InstitucionId");
 
                     b.ToTable("Cursos");
                 });
@@ -70,6 +75,89 @@ namespace DataBaseTry.Migrations
                     b.ToTable("Alumnos");
                 });
 
+            modelBuilder.Entity("DataBaseTry.Models.ComentarioMaterial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Texto")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MaterialId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("ComentariosMaterial");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.HistorialAccesoMaterial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("FechaAcceso")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MaterialId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("HistorialesAccesoMaterial");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.Institucion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CodigoInstitucion")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Instituciones");
+                });
+
             modelBuilder.Entity("DataBaseTry.Models.Material", b =>
                 {
                     b.Property<int>("Id")
@@ -104,6 +192,36 @@ namespace DataBaseTry.Migrations
                     b.HasIndex("UploadedById");
 
                     b.ToTable("Materiales");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.Notificacion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Leido")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Mensaje")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Notificaciones");
                 });
 
             modelBuilder.Entity("DataBaseTry.Models.Seccion", b =>
@@ -156,7 +274,7 @@ namespace DataBaseTry.Migrations
                     b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Institucion")
+                    b.Property<int>("InstitucionId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nombre")
@@ -170,6 +288,8 @@ namespace DataBaseTry.Migrations
 
                     b.HasIndex("Correo")
                         .IsUnique();
+
+                    b.HasIndex("InstitucionId");
 
                     b.ToTable("Usuarios");
                 });
@@ -195,6 +315,55 @@ namespace DataBaseTry.Migrations
                     b.ToTable("Inscripciones");
                 });
 
+            modelBuilder.Entity("Curso", b =>
+                {
+                    b.HasOne("DataBaseTry.Models.Institucion", "Institucion")
+                        .WithMany("Cursos")
+                        .HasForeignKey("InstitucionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Institucion");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.ComentarioMaterial", b =>
+                {
+                    b.HasOne("DataBaseTry.Models.Material", "Material")
+                        .WithMany("Comentarios")
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataBaseTry.Models.Usuario", "Usuario")
+                        .WithMany("ComentariosMaterial")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.HistorialAccesoMaterial", b =>
+                {
+                    b.HasOne("DataBaseTry.Models.Material", "Material")
+                        .WithMany("HistorialesAcceso")
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataBaseTry.Models.Usuario", "Usuario")
+                        .WithMany("HistorialesAccesoMaterial")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("DataBaseTry.Models.Material", b =>
                 {
                     b.HasOne("DataBaseTry.Models.Seccion", "Seccion")
@@ -204,7 +373,7 @@ namespace DataBaseTry.Migrations
                         .IsRequired();
 
                     b.HasOne("DataBaseTry.Models.Usuario", "UploadedBy")
-                        .WithMany()
+                        .WithMany("MaterialesSubidos")
                         .HasForeignKey("UploadedById")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -212,6 +381,17 @@ namespace DataBaseTry.Migrations
                     b.Navigation("Seccion");
 
                     b.Navigation("UploadedBy");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.Notificacion", b =>
+                {
+                    b.HasOne("DataBaseTry.Models.Usuario", "Usuario")
+                        .WithMany("Notificaciones")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("DataBaseTry.Models.Seccion", b =>
@@ -223,7 +403,7 @@ namespace DataBaseTry.Migrations
                         .IsRequired();
 
                     b.HasOne("DataBaseTry.Models.Usuario", "Profesor")
-                        .WithMany()
+                        .WithMany("SeccionesComoProfesor")
                         .HasForeignKey("ProfesorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -233,10 +413,21 @@ namespace DataBaseTry.Migrations
                     b.Navigation("Profesor");
                 });
 
+            modelBuilder.Entity("DataBaseTry.Models.Usuario", b =>
+                {
+                    b.HasOne("DataBaseTry.Models.Institucion", "Institucion")
+                        .WithMany("Usuarios")
+                        .HasForeignKey("InstitucionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Institucion");
+                });
+
             modelBuilder.Entity("Inscripcion", b =>
                 {
                     b.HasOne("DataBaseTry.Models.Usuario", "Alumno")
-                        .WithMany()
+                        .WithMany("InscripcionesComoAlumno")
                         .HasForeignKey("AlumnoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -257,11 +448,40 @@ namespace DataBaseTry.Migrations
                     b.Navigation("Secciones");
                 });
 
+            modelBuilder.Entity("DataBaseTry.Models.Institucion", b =>
+                {
+                    b.Navigation("Cursos");
+
+                    b.Navigation("Usuarios");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.Material", b =>
+                {
+                    b.Navigation("Comentarios");
+
+                    b.Navigation("HistorialesAcceso");
+                });
+
             modelBuilder.Entity("DataBaseTry.Models.Seccion", b =>
                 {
                     b.Navigation("Inscripciones");
 
                     b.Navigation("Materiales");
+                });
+
+            modelBuilder.Entity("DataBaseTry.Models.Usuario", b =>
+                {
+                    b.Navigation("ComentariosMaterial");
+
+                    b.Navigation("HistorialesAccesoMaterial");
+
+                    b.Navigation("InscripcionesComoAlumno");
+
+                    b.Navigation("MaterialesSubidos");
+
+                    b.Navigation("Notificaciones");
+
+                    b.Navigation("SeccionesComoProfesor");
                 });
 #pragma warning restore 612, 618
         }
