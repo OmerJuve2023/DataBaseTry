@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj": {}
+    "C:\\Users\\omerS\\IdeaProjects\\DataBaseTry\\DataBaseTry.csproj": {}
   },
   "projects": {
-    "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj": {
+    "C:\\Users\\omerS\\IdeaProjects\\DataBaseTry\\DataBaseTry.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj",
+        "projectUniqueName": "C:\\Users\\omerS\\IdeaProjects\\DataBaseTry\\DataBaseTry.csproj",
         "projectName": "DataBaseTry",
-        "projectPath": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj",
+        "projectPath": "C:\\Users\\omerS\\IdeaProjects\\DataBaseTry\\DataBaseTry.csproj",
         "packagesPath": "C:\\Users\\omerS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\obj\\",
+        "outputPath": "C:\\Users\\omerS\\IdeaProjects\\DataBaseTry\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\omerS\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IfFHbPQ8C+o=",
+  "dgSpecHash": "DZygHk/KN8U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj",
+  "projectFilePath": "C:\\Users\\omerS\\IdeaProjects\\DataBaseTry\\DataBaseTry.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\omerS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\omerS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

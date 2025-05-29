@@ -26,5 +26,8 @@ namespace DataBaseTry.Models
         [Required]
         public int UploadedById { get; set; }   // FK a Usuario (profesor)
         public Usuario UploadedBy { get; set; }
+
+        public ICollection<ComentarioMaterial> Comentarios { get; set; }
+        public ICollection<HistorialAccesoMaterial> HistorialesAcceso { get; set; }
     }
 }

@@ -14,6 +14,10 @@ A continuación se muestran ejemplos de inserción de datos para las tablas prin
     - `0`: Alumno
     - `1`: Profesor
     - `2`: Administrador
+- **Relaciones de navegación:**
+    - Un usuario puede estar relacionado como profesor en varias secciones (`SeccionesComoProfesor`).
+    - Un usuario puede tener varias inscripciones como alumno (`InscripcionesComoAlumno`).
+    - Un usuario puede haber subido varios materiales (`MaterialesSubidos`).
 
 Estos valores permiten distinguir el perfil y los permisos de cada usuario en el sistema.
 
@@ -54,6 +58,8 @@ INSERT INTO Curso (Id, Nombre, CodigoInstitucion) VALUES
 
 **Columnas:** Id, Nombre, CursoId, ProfesorId
 
+- **ProfesorId** referencia a un usuario con rol profesor (relación de navegación `SeccionesComoProfesor`).
+
 ```sql
 INSERT INTO Seccion (Id, Nombre, CursoId, ProfesorId) VALUES
   (1, 'Sección A', 1, 1),
@@ -66,6 +72,8 @@ INSERT INTO Seccion (Id, Nombre, CursoId, ProfesorId) VALUES
 
 **Columnas:** Id, AlumnoId, SeccionId
 
+- **AlumnoId** referencia a un usuario con rol alumno (relación de navegación `InscripcionesComoAlumno`).
+
 ```sql
 INSERT INTO Inscripcion (Id, AlumnoId, SeccionId) VALUES
   (1, 3, 1),
@@ -77,6 +85,8 @@ INSERT INTO Inscripcion (Id, AlumnoId, SeccionId) VALUES
 ### Tabla: Material
 
 **Columnas:** Id, Titulo, Descripcion, FilePath, FechaSubida, SeccionId, UploadedById
+
+- **UploadedById** referencia a un usuario (relación de navegación `MaterialesSubidos`).
 
 ```sql
 INSERT INTO Material (Id, Titulo, Descripcion, FilePath, FechaSubida, SeccionId, UploadedById) VALUES
