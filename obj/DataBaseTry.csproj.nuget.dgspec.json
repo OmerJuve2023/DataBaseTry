@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj": {}
+    "/workspaces/DataBaseTry/DataBaseTry.csproj": {}
   },
   "projects": {
-    "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj": {
+    "/workspaces/DataBaseTry/DataBaseTry.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj",
+        "projectUniqueName": "/workspaces/DataBaseTry/DataBaseTry.csproj",
         "projectName": "DataBaseTry",
-        "projectPath": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\DataBaseTry.csproj",
-        "packagesPath": "C:\\Users\\omerS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\omerS\\Downloads\\DataBaseTry\\DataBaseTry\\obj\\",
+        "projectPath": "/workspaces/DataBaseTry/DataBaseTry.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/DataBaseTry/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\omerS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\omerS\\.dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
