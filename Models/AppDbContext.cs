@@ -19,6 +19,7 @@ namespace DataBaseTry.Models
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<SeccionHorario> SeccionesHorario { get; set; }
         public DbSet<Asistencia> Asistencias { get; set; }
+        public DbSet<Profesor> Profesores { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
