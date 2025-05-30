@@ -25,5 +25,7 @@ namespace DataBaseTry.Models
         public ICollection<Inscripcion> Inscripciones { get; set; }
 
         public ICollection<Material> Materiales { get; set; }
+
+        public ICollection<SeccionHorario> SeccionesHorario { get; set; }
     }
 }

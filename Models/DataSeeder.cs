@@ -150,6 +150,22 @@ namespace DataBaseTry.Models
                 );
                 context.SaveChanges();
             }
+
+            // Datos de ejemplo para Profesor
+            if (!context.Profesores.Any())
+            {
+                // Solo usuarios con Rol = 1 (profesor)
+                var profesores = context.Usuarios.Where(u => u.Rol == 1).ToList();
+                foreach (var prof in profesores)
+                {
+                    context.Profesores.Add(new Profesor
+                    {
+                        UsuarioId = prof.Id
+                    });
+                }
+                context.SaveChanges();
+            }
+
             // Puedes agregar aquí datos de ejemplo para otras tablas si lo deseas
         }
     }
