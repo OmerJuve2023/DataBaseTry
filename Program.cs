@@ -21,7 +21,15 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    DataBaseTry.Models.DataSeeder.Seed(db);
+    try
+    {
+        DataBaseTry.Models.DataSeeder.Seed(db);
+    }
+    catch (Exception ex)
+    {
+        // Loguea el error para evitar que la app se caiga si hay un problema en el seed
+        Console.WriteLine($"Error al inicializar la base de datos: {ex.Message}");
+    }
 }
 
 // Configure the HTTP request pipeline.
